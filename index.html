@@ -8,6 +8,8 @@
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
 
+    <link rel="stylesheet" href="css/styleModal.css">
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -29,6 +31,7 @@
 </head>
 
 <body>
+
     <!-- Navbar Start -->
     <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
@@ -41,17 +44,17 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
                     <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                    <a href="#nosotros" class="nav-item nav-link">Acerca de Nostros</a>
+                    <a href="#nosotros" class="nav-item nav-link">Nosotros</a>
                     <a href="#servicios" class="nav-item nav-link">Servicios</a>
                     <a href="#menu" class="nav-item nav-link">Menú</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
                         <div class="dropdown-menu text-capitalize">
                             <a href="#reservaciones" class="dropdown-item">Reservaciones</a>
                             <a href="#testimonios" class="dropdown-item">Testimonios</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
+                    <a href="#contactanos" class="nav-item nav-link">Contáctanos</a>
                 </div>
             </div>
         </nav>
@@ -89,12 +92,12 @@
     </div>
     <!-- Carousel End -->
 
-
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="section-title">
-                <h4 id="nosotros" class="text-primary text-uppercase" style="letter-spacing: 5px;">Acerca de nosotros</h4>
+                <h4 id="nosotros" class="text-primary text-uppercase" style="letter-spacing: 5px;">Acerca de nosotros
+                </h4>
                 <h1 class="display-4">Sirviendo desde 1950</h1>
             </div>
             <div class="row">
@@ -117,7 +120,7 @@
 
                         La Esquina de 24 es ese lugar donde el tiempo se detiene un poquito… para que tú lo disfrutes.
                     </p>
-                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                    <!-- <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a> -->
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -138,7 +141,7 @@
                         cómoda, valorada y bienvenida</h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Inspirar a través de lo simple: una
                         flor seca, una sonrisa, un buen café</h5>
-                    <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                    <!-- <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a> -->
                 </div>
             </div>
         </div>
@@ -150,7 +153,8 @@
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Nuestros servicios</h4>
+                <h4 id="servicios" class="text-primary text-uppercase" style="letter-spacing: 5px;">Nuestros servicios
+                </h4>
                 <h1 class="display-4">Semillas frescas & organicas</h1>
             </div>
             <div class="row">
@@ -161,9 +165,8 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-truck service-icon"></i>Entrega rapida a domicilio</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                            <p class="m-0">Lleva el sabor del buen café a tu hogar sin complicaciones. Contamos con
+                                envíos rápidos y seguros para que disfrutes de nuestros productos donde estés.</p>
                         </div>
                     </div>
                 </div>
@@ -174,9 +177,8 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-coffee service-icon"></i>Cafe fresco y organico</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                            <p class="m-0">Nuestro café es cultivado de forma sostenible y seleccionado cuidadosamente
+                                para ofrecerte una experiencia auténtica, natural y llena de sabor.</p>
                         </div>
                     </div>
                 </div>
@@ -187,9 +189,9 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-award service-icon"></i>Cafe seleccionado</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                            <p class="m-0">Cada grano pasa por un proceso de selección minucioso. Valoramos la calidad
+                                sobre la cantidad, por eso solo trabajamos con productores comprometidos con la
+                                excelencia.</p>
                         </div>
                     </div>
                 </div>
@@ -200,9 +202,8 @@
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="fa fa-table service-icon"></i>Reservas online</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor
-                                sed est sit
-                                invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                            <p class="m-0">Haz tu pedido o reserva tu visita desde nuestra web de forma fácil y rápida.
+                                ¡Queremos que disfrutes de tu café favorito sin hacer fila!</p>
                         </div>
                     </div>
                 </div>
@@ -220,9 +221,9 @@
             <h4 class="text-white font-weight-normal mb-4 pb-3">Ofertas especiales todos los domingos del año</h4>
             <form class="form-inline justify-content-center mb-4">
                 <div class="input-group">
-                    <input type="text" class="form-control p-4" placeholder="Your Email" style="height: 60px;">
+                    <input type="text" class="form-control p-4" placeholder="Correo" style="height: 60px;">
                     <div class="input-group-append">
-                        <button class="btn btn-primary font-weight-bold px-4" type="submit">Sign Up</button>
+                        <button class="btn btn-primary font-weight-bold px-4" type="submit">Registrate</button>
                     </div>
                 </div>
             </form>
@@ -235,7 +236,7 @@
     <div class="container-fluid pt-5">
         <div class="container">
             <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Precios</h4>
+                <h4 id="menu" class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Precios</h4>
                 <h1 class="display-4">Precios Competitivos</h1>
             </div>
             <div class="row">
@@ -248,6 +249,7 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Black Coffee</h4>
+                            <button class="button-carrito abrirModal">Añadir al carrito</button>
                             <p class="m-0">Un café negro intenso, perfecto para los amantes del sabor puro y fuerte del
                                 grano recién molido. Sin añadidos, solo energía y carácter.
                             </p>
@@ -287,6 +289,7 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Black Coffee</h4>
+                            <button class="button-carrito abrirModal">Añadir al carrito</button>
                             <p class="m-0">Café frío, fuerte y directo al paladar. Servido con hielo para mantener su
                                 frescura sin perder su esencia intensa.
                             </p>
@@ -331,7 +334,7 @@
                     <div class="col-lg-6 my-5 my-lg-0">
                         <div class="p-5">
                             <div class="mb-4">
-                                <h1 class="display-3 text-primary">30% de Descuento</h1>
+                                <h1 id="reservaciones" class="display-3 text-primary">30% de Descuento</h1>
                                 <h1 class="text-white">Para reservas Online</h1>
                             </div>
                             <p class="text-white">Reserva tu mesa desde nuestra página web y obtén un 30% de descuento
@@ -399,12 +402,11 @@
     </div>
     <!-- Reservation End -->
 
-
     <!-- Testimonial Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonios</h4>
+                <h4 id="testimonios" class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonios</h4>
                 <h1 class="display-4">Nuestros clientes dicen:</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
@@ -462,7 +464,8 @@
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contáctanos</h4>
+                <h4 id="contactanos" class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contáctanos
+                </h4>
                 <p><i class="fa fa-map-marker-alt mr-2"></i>Av. 5 de Junio S2-04 y Fco. Quijano, Pillaro</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+593 99 427 1141</p>
                 <p class="m-0"><i class="fa fa-envelope mr-2"></i>infocafe24@gmail.com</p>
@@ -513,10 +516,11 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+    <!-- Contenedor del modal -->
+    <div id="contenedor-modal"></div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -534,6 +538,75 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- login/register Javascript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Promise.all([
+                fetch('modalLogin.html').then(r => r.text()),
+                fetch('modalRegister.html').then(r => r.text())
+            ])
+                .then(([loginHtml, registerHtml]) => {
+                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml;
+
+                    const modalLogin = document.getElementById('modalLogin');
+                    const modalRegistro = document.getElementById('modalRegistro');
+
+                    // Abrir modalLogin al hacer clic en elementos con clase .abrirModal
+                    document.querySelectorAll('.abrirModal').forEach(btn => {
+                        btn.addEventListener('click', e => {
+                            e.preventDefault();
+                            modalLogin.style.display = 'block';
+                        });
+                    });
+
+                    // Botones de cerrar
+                    document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
+                    document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
+
+                    // Ir desde login a registro
+                    document.getElementById('abrirRegistro').onclick = e => {
+                        e.preventDefault();
+                        modalLogin.style.display = 'none';
+                        modalRegistro.style.display = 'block';
+                    };
+
+                    // Ir desde registro a login
+                    document.getElementById('abrirLogin').onclick = e => {
+                        e.preventDefault();
+                        modalRegistro.style.display = 'none';
+                        modalLogin.style.display = 'block';
+                    };
+
+                    // Enviar formulario login
+                    document.getElementById('formLogin').onsubmit = e => {
+                        e.preventDefault();
+                        const usuario = document.getElementById('usuario').value;
+                        const clave = document.getElementById('clave').value;
+                        alert(`Usuario: ${usuario}\nContraseña: ${clave}`);
+                        modalLogin.style.display = 'none';
+                    };
+
+                    // Enviar formulario registro
+                    document.getElementById('formRegistro').onsubmit = e => {
+                        e.preventDefault();
+                        const usuario = document.getElementById('nuevoUsuario').value;
+                        const clave = document.getElementById('nuevaClave').value;
+                        alert(`Nuevo usuario: ${usuario}\nNueva clave: ${clave}`);
+                        modalRegistro.style.display = 'none';
+                        modalLogin.style.display = 'block'; // Volver a login tras registrar
+                    };
+
+                    // Cerrar modales haciendo clic fuera
+                    window.onclick = e => {
+                        if (e.target === modalLogin) modalLogin.style.display = 'none';
+                        if (e.target === modalRegistro) modalRegistro.style.display = 'none';
+                    };
+                })
+                .catch(err => console.error('Error cargando modales:', err));
+        });
+    </script>
+
 </body>
 
 </html>
