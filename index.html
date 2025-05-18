@@ -55,6 +55,7 @@
                         </div>
                     </div>
                     <a href="#contactanos" class="nav-item nav-link">Contáctanos</a>
+                    <a href="#" class="abrirCarrito nav-item nav-link">🛒 Ver Carrito</a>
                 </div>
             </div>
         </nav>
@@ -221,9 +222,7 @@
             <h4 class="text-white font-weight-normal mb-4 pb-3">Ofertas especiales todos los domingos del año</h4>
             <form class="form-inline justify-content-center mb-4">
                 <div class="input-group">
-                    <input type="text" class="form-control p-4" placeholder="Correo" style="height: 60px;">
                     <div class="input-group-append">
-                        <button class="btn btn-primary font-weight-bold px-4" type="submit">Registrate</button>
                     </div>
                 </div>
             </form>
@@ -544,15 +543,17 @@
         document.addEventListener('DOMContentLoaded', () => {
             Promise.all([
                 fetch('modalLogin.html').then(r => r.text()),
-                fetch('modalRegister.html').then(r => r.text())
+                fetch('modalRegister.html').then(r => r.text()),
+                fetch('modalCarrito.html').then(r => r.text())
             ])
-                .then(([loginHtml, registerHtml]) => {
-                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml;
+                .then(([loginHtml, registerHtml, carritoHtml]) => {
+                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml;
 
                     const modalLogin = document.getElementById('modalLogin');
                     const modalRegistro = document.getElementById('modalRegistro');
+                    const modalCarrito = document.getElementById('modalCarrito');
 
-                    // Abrir modalLogin al hacer clic en elementos con clase .abrirModal
+                    // Botón abrir login
                     document.querySelectorAll('.abrirModal').forEach(btn => {
                         btn.addEventListener('click', e => {
                             e.preventDefault();
@@ -560,51 +561,42 @@
                         });
                     });
 
-                    // Botones de cerrar
+                    // Botón abrir carrito
+                    document.querySelectorAll('.abrirCarrito').forEach(btn => {
+                        btn.addEventListener('click', e => {
+                            e.preventDefault();
+                            modalCarrito.style.display = 'block';
+                        });
+                    });
+
+                    // Botones cerrar
                     document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
                     document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
+                    document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
 
-                    // Ir desde login a registro
+                    // Navegación entre login y registro
                     document.getElementById('abrirRegistro').onclick = e => {
                         e.preventDefault();
                         modalLogin.style.display = 'none';
                         modalRegistro.style.display = 'block';
                     };
 
-                    // Ir desde registro a login
                     document.getElementById('abrirLogin').onclick = e => {
                         e.preventDefault();
                         modalRegistro.style.display = 'none';
                         modalLogin.style.display = 'block';
                     };
 
-                    // Enviar formulario login
-                    document.getElementById('formLogin').onsubmit = e => {
-                        e.preventDefault();
-                        const usuario = document.getElementById('usuario').value;
-                        const clave = document.getElementById('clave').value;
-                        alert(`Usuario: ${usuario}\nContraseña: ${clave}`);
-                        modalLogin.style.display = 'none';
-                    };
-
-                    // Enviar formulario registro
-                    document.getElementById('formRegistro').onsubmit = e => {
-                        e.preventDefault();
-                        const usuario = document.getElementById('nuevoUsuario').value;
-                        const clave = document.getElementById('nuevaClave').value;
-                        alert(`Nuevo usuario: ${usuario}\nNueva clave: ${clave}`);
-                        modalRegistro.style.display = 'none';
-                        modalLogin.style.display = 'block'; // Volver a login tras registrar
-                    };
-
-                    // Cerrar modales haciendo clic fuera
+                    // Cerrar modales al hacer clic fuera
                     window.onclick = e => {
                         if (e.target === modalLogin) modalLogin.style.display = 'none';
                         if (e.target === modalRegistro) modalRegistro.style.display = 'none';
+                        if (e.target === modalCarrito) modalCarrito.style.display = 'none';
                     };
                 })
                 .catch(err => console.error('Error cargando modales:', err));
         });
+
     </script>
 
 </body>
