@@ -1,0 +1,25 @@
+<!-- modalReserva.html -->
+<div id="modalReserva" class="modal" style="display:none;">
+    <div class="modal-contenido">
+        <span class="cerrar" id="cerrarReserva">&times;</span>
+        <h3>Reserva una Mesa</h3>
+        <form id="formReserva">
+            <label for="nombreReserva">Nombre:</label>
+            <input type="text" id="nombreReserva" name="nombreReserva" required>
+
+            <label for="correoReserva">Correo:</label>
+            <input type="email" id="correoReserva" name="correoReserva" required>
+
+            <label for="fechaReserva">Fecha:</label>
+            <input type="date" id="fechaReserva" name="fechaReserva" required>
+
+            <label for="horaReserva">Hora:</label>
+            <input type="time" id="horaReserva" name="horaReserva" required>
+
+            <label for="personasReserva">Número de personas:</label>
+            <input type="number" id="personasReserva" name="personasReserva" required min="1">
+
+            <button type="submit" class="button-logReg">Reservar</button>
+        </form>
+    </div>
+</div>

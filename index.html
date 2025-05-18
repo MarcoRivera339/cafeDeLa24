@@ -47,6 +47,7 @@
                     <a href="#nosotros" class="nav-item nav-link">Nosotros</a>
                     <a href="#servicios" class="nav-item nav-link">Servicios</a>
                     <a href="#menu" class="nav-item nav-link">Menú</a>
+                    <a href="#contactanos" class="nav-item nav-link">Contáctanos</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Paginas</a>
                         <div class="dropdown-menu text-capitalize">
@@ -54,8 +55,14 @@
                             <a href="#testimonios" class="dropdown-item">Testimonios</a>
                         </div>
                     </div>
-                    <a href="#contactanos" class="nav-item nav-link">Contáctanos</a>
-                    <a href="#" class="abrirCarrito nav-item nav-link">🛒 Ver Carrito</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Mi cuenta</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="#" class="abrirCarrito dropdown-item">Ver Carrito</a>
+                            <button class="abrirLogin dropdown-item">Login</button>
+                            <button class="abrirRegister dropdown-item">Register</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -352,47 +359,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                        <div class="text-center p-5">
                             <h1 class="text-white mb-4 mt-5">Reserva tu mesa</h1>
-                            <form class="mb-5">
-                                <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent border-primary p-4"
-                                        placeholder="Nombre" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent border-primary p-4"
-                                        placeholder="Correo" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-transparent border-primary p-4 datetimepicker-input"
-                                            placeholder="Fecha" data-target="#date" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-transparent border-primary p-4 datetimepicker-input"
-                                            placeholder="Hora" data-target="#time" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select bg-transparent border-primary px-4"
-                                        style="height: 49px;">
-                                        <option selected>Persona</option>
-                                        <option value="1">1 Persona</option>
-                                        <option value="2">2 Personas</option>
-                                        <option value="3">3 Personas</option>
-                                        <option value="4">4 Personas</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <button class="btn btn-primary btn-block font-weight-bold py-3"
-                                        type="submit">Reserva Ahora</button>
-                                </div>
-                            </form>
+                            <div>
+                                <button class="btn btn-primary btn-block font-weight-bold py-3 abrirReserva"
+                                    type="submit"> 📅 Reserva Ahora</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -493,16 +465,12 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Más información</h4>
-                <p>Para mas información dejanos tu correo aqui:</p>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;"
-                            placeholder="Correo">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Enviar</button>
-                        </div>
-                    </div>
-                </div>
+                <p>Para más información escríbenos al WhatsApp:</p>
+                <!-- QR de WhatsApp -->
+                <a href="https://wa.me/593998779446" target="_blank">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/593994271141"
+                        alt="QR WhatsApp" style="width: 125px; height: 125px;">
+                </a>
             </div>
         </div>
         <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
@@ -544,20 +512,30 @@
             Promise.all([
                 fetch('modalLogin.html').then(r => r.text()),
                 fetch('modalRegister.html').then(r => r.text()),
-                fetch('modalCarrito.html').then(r => r.text())
+                fetch('modalCarrito.html').then(r => r.text()),
+                fetch('modalReserva.html').then(r => r.text())
             ])
-                .then(([loginHtml, registerHtml, carritoHtml]) => {
-                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml;
+                .then(([loginHtml, registerHtml, carritoHtml, reservaHtml]) => {
+                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml + reservaHtml;
 
                     const modalLogin = document.getElementById('modalLogin');
                     const modalRegistro = document.getElementById('modalRegistro');
                     const modalCarrito = document.getElementById('modalCarrito');
+                    const modalReserva = document.getElementById('modalReserva');
 
-                    // Botón abrir login
-                    document.querySelectorAll('.abrirModal').forEach(btn => {
+                    // Botón abrir Login individual
+                    document.querySelectorAll('.abrirLogin').forEach(btn => {
                         btn.addEventListener('click', e => {
                             e.preventDefault();
                             modalLogin.style.display = 'block';
+                        });
+                    });
+
+                    // Botón abrir Registro individual
+                    document.querySelectorAll('.abrirRegister').forEach(btn => {
+                        btn.addEventListener('click', e => {
+                            e.preventDefault();
+                            modalRegistro.style.display = 'block';
                         });
                     });
 
@@ -569,10 +547,19 @@
                         });
                     });
 
+                    // Botón abrir reserva
+                    document.querySelectorAll('.abrirReserva').forEach(btn => {
+                        btn.addEventListener('click', e => {
+                            e.preventDefault();
+                            modalReserva.style.display = 'block';
+                        });
+                    });
+
                     // Botones cerrar
                     document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
                     document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
                     document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
+                    document.getElementById('cerrarReserva').onclick = () => modalReserva.style.display = 'none';
 
                     // Navegación entre login y registro
                     document.getElementById('abrirRegistro').onclick = e => {
@@ -587,17 +574,33 @@
                         modalLogin.style.display = 'block';
                     };
 
+                    // Enviar formulario reserva
+                    document.getElementById('formReserva').onsubmit = e => {
+                        e.preventDefault();
+                        const nombre = document.getElementById('nombreReserva').value;
+                        const correo = document.getElementById('correoReserva').value;
+                        const fecha = document.getElementById('fechaReserva').value;
+                        const hora = document.getElementById('horaReserva').value;
+                        const personas = document.getElementById('personasReserva').value;
+
+                        alert(`Reserva realizada:\nNombre: ${nombre}\nCorreo: ${correo}\nFecha: ${fecha}\nHora: ${hora}\nPersonas: ${personas}`);
+
+                        modalReserva.style.display = 'none';
+                        e.target.reset();
+                    };
+
                     // Cerrar modales al hacer clic fuera
                     window.onclick = e => {
                         if (e.target === modalLogin) modalLogin.style.display = 'none';
                         if (e.target === modalRegistro) modalRegistro.style.display = 'none';
                         if (e.target === modalCarrito) modalCarrito.style.display = 'none';
+                        if (e.target === modalReserva) modalReserva.style.display = 'none';
                     };
                 })
                 .catch(err => console.error('Error cargando modales:', err));
         });
-
     </script>
+
 
 </body>
 
