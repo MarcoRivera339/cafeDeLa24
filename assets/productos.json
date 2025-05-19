@@ -4,7 +4,7 @@
       "id": "2",
       "producto": "Chocolete Coffe Hot",
       "precio": 7,
-      "cantidad": 1
+      "cantidad": 2
     },
     {
       "id": "1",
@@ -16,6 +16,12 @@
       "id": "3",
       "producto": "Coffe with Milk Hot",
       "precio": 9,
+      "cantidad": 1
+    },
+    {
+      "id": "4",
+      "producto": "Black Coffe Cold",
+      "precio": 5,
       "cantidad": 1
     }
   ]
