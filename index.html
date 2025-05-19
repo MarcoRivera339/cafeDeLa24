@@ -28,6 +28,17 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-utbXrWoTzW3QXsz1gMpHc+rqTHlQHoS2fVllMbDg61H8kExI5iQNVzpA9gZ7vv3plx9b2MbZnK5eQxjRMzjYzQ=="
+        crossorigin="anonymous" />
+
+    <!-- Owl Carousel Theme (opcional) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-6wGwrxPxclqDpq+jNwP6DCjB3CEpslF0XOcRjRwq6j7Xh7N/60pUZCHDUC8FGng6oF6rSMpq6lQtnrsyXwt40g=="
+        crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -255,7 +266,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Black Coffee</h4>
-                            <button class="button-carrito abrirModal">Añadir al carrito</button>
+                            <button id="blackCoffeHot" class="button-carrito"
+                                onclick="agregarProducto('1','Black Coffe Hot',5)">Añadir al carrito</button>
                             <p class="m-0">Un café negro intenso, perfecto para los amantes del sabor puro y fuerte del
                                 grano recién molido. Sin añadidos, solo energía y carácter.
                             </p>
@@ -268,6 +280,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Chocolete Coffee</h4>
+                            <button id="chocoleteCoffeHot" class="button-carrito"
+                                onclick="agregarProducto('2','Chocolete Coffe Hot',7)">Añadir al carrito</button>
                             <p class="m-0">Una deliciosa combinación de café con un toque de chocolate, ideal para
                                 quienes buscan una bebida dulce, cremosa y llena de sabor.
                             </p>
@@ -280,6 +294,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Coffee With Milk</h4>
+                            <button id="coffeWithMilkHot" class="button-carrito"
+                                onclick="agregarProducto('3','Coffe with Milk Hot',9)">Añadir al carrito</button>
                             <p class="m-0">Un equilibrio perfecto entre café y leche vaporizada. Suave, cremoso y con un
                                 sabor reconfortante que acaricia el paladar.
                             </p>
@@ -295,7 +311,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Black Coffee</h4>
-                            <button class="button-carrito abrirModal">Añadir al carrito</button>
+                            <button id="BlackCoffeCold" class="button-carrito"
+                                onclick="agregarProducto('4','Black Coffe Cold',5)">Añadir al carrito</button>
                             <p class="m-0">Café frío, fuerte y directo al paladar. Servido con hielo para mantener su
                                 frescura sin perder su esencia intensa.
                             </p>
@@ -308,6 +325,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Chocolete Coffee</h4>
+                            <button id="chocoleteCoffeCold" class="button-carrito"
+                                onclick="agregarProducto('5','Chocolete Coffe Cold',5)">Añadir al carrito</button>
                             <p class="m-0">Una mezcla refrescante de café y chocolate, servida fría para ofrecerte una
                                 experiencia dulce y energizante.
                             </p>
@@ -320,6 +339,8 @@
                         </div>
                         <div class="col-8 col-sm-9">
                             <h4>Coffee With Milk</h4>
+                            <button id="coffeWithMilkCold" class="button-carrito"
+                                onclick="agregarProducto('6','Coffe with Milk Cold',3.75)">Añadir al carrito</button>
                             <p class="m-0">Café frío con leche, suave y cremoso. Una bebida ligera, ideal para acompañar
                                 tus tardes o simplemente para consentirte.
                             </p>
@@ -522,6 +543,7 @@
                     const modalRegistro = document.getElementById('modalRegistro');
                     const modalCarrito = document.getElementById('modalCarrito');
                     const modalReserva = document.getElementById('modalReserva');
+                    
 
                     // Botón abrir Login individual
                     document.querySelectorAll('.abrirLogin').forEach(btn => {
@@ -601,7 +623,7 @@
         });
     </script>
 
-
+    <script src="js/productos.js">
+    </script>
 </body>
-
 </html>

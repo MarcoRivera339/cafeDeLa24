@@ -1,66 +1,4 @@
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-contenido {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.cerrar {
-    float: right;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.cerrar:hover {
-    color: red;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-}
-
-.button-carrito {
-    width: 40%;
-    padding: 10px;
-    background-color: #5C4033;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-
-}
-
-button:hover {
-    background-color: #5C4033;
-}
-
-.button-logReg {
-    width: 50%;
-    margin: 10px auto 0 auto;
-    padding: 10px;
-    background-color: #5C4033;
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: block;
-    font-weight: bold;
-}
-
+/* Fondo del modal */
 .modal {
     display: none;
     position: fixed;
@@ -73,29 +11,101 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Contenedor del modal */
 .modal-contenido {
     background: white;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
+    border-radius: 10px;
+    width: 95%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
     position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Botón cerrar */
 .cerrar {
     position: absolute;
     right: 15px;
     top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
 }
 
+.cerrar:hover {
+    color: red;
+}
+
+/* Botón del carrito */
+.button-carrito {
+    width: 40%;
+    padding: 10px;
+    background-color: #5C4033;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button-carrito:hover {
+    background-color: #4a3228;
+}
+
+/* Botón login/registro */
+.button-logReg {
+    width: 50%;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    background-color: #5C4033;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #4a3228;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+/* Tabla dentro del modal */
+.modal-contenido table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.modal-contenido th,
+.modal-contenido td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Ajuste para que la tabla no se desborde */
+.modal-contenido .table-wrapper {
+    overflow-x: auto;
+}
+
+/* Grid para formularios (por si usas log/reg modal también) */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-.form-grid>div {
+.form-grid > div {
     display: flex;
     flex-direction: column;
 }

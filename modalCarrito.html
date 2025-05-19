@@ -1,11 +1,36 @@
 <!-- modalCarrito.html -->
-<div id="modalCarrito" class="modal" style="display:none;">
+<div id="modalCarrito" class="modal" id="contenidoModalCarrito">
     <div class="modal-contenido">
         <span class="cerrar" id="cerrarCarrito">&times;</span>
         <h3>Tu Carrito</h3>
+
         <div id="contenidoCarrito">
-            <p>No hay productos en el carrito.</p>
+            <p id="mensajeVacio">No hay productos en el carrito.</p>
+
+            <div class="table-wrapper">
+                <table class="table" id="tabla">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- Filas generadas dinámicamente -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">TOTAL</th>
+                            <td id="total">0.00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
-        <button>Finalizar compra</button>
+        <button class="button-carrito">Finalizar compra</button>
     </div>
 </div>
