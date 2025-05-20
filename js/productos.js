@@ -25,7 +25,7 @@ const actualizarTabla = () => {
     let total = 0;
 
     tbody.innerHTML = '';
-    
+
     if (productos.length === 0) {
         document.getElementById('mensajeVacio').style.display = 'block';
     } else {
@@ -47,24 +47,20 @@ const actualizarTabla = () => {
         celdaTotal.textContent = (item.precio * item.cantidad).toFixed(2);
 
         let boton = document.createElement('button');
-        boton.type = 'button';  // Importante: Evita que sea tipo 'submit'
+        boton.type = 'button';  // Evita recarga
         boton.textContent = 'Borrar';
         boton.className = 'btn btn-danger btn-sm';
 
         boton.addEventListener('click', (e) => {
-            e.preventDefault();  // Previene el comportamiento por defecto
-            e.stopPropagation(); // Evita la propagación del evento
-            eliminar(item.id);
+            e.preventDefault();  // Evita redirecciones o envíos
+            e.stopPropagation(); // Previene efectos secundarios
+            eliminar(item.id);   // Llama a la función eliminar
         });
-        
-        celdaBoton.appendChild(boton);
 
+        celdaBoton.appendChild(boton);
         total += item.precio * item.cantidad;
     }
-
     document.getElementById('total').textContent = total.toFixed(2);
-    
-
 };
 
 // Funciones API (POST, GET, PUT, DELETE)
@@ -91,7 +87,7 @@ async function getJSON() {
         const result = await response.json();
         productos = result;
         actualizarTabla();
-        
+
         console.log("Success GET:", result);
     } catch (error) {
         console.error("Error GET:", error);
@@ -106,7 +102,7 @@ async function putJSON(data) {
             body: JSON.stringify(data),
         });
         const result = await response.json();
-        
+
         console.log("Success PUT:", result);
     } catch (error) {
         console.error("Error PUT:", error);
@@ -125,14 +121,9 @@ async function deleteJSON(id) {
     }
 }
 
-const eliminar = async (id) => {
-    try {
-        await deleteJSON(id);
-        productos = productos.filter(p => p.id !== id);
-        actualizarTabla();
-    } catch (error) {
-        console.error("Error eliminando producto:", error);
-    }
+const eliminar = (id) => {
+    productos = productos.filter(p => p.id !== id); // Elimina el producto del arreglo
+    actualizarTabla(); // Vuelve a dibujar la tabla
 };
 
 // Cargar datos al iniciar

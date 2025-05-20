@@ -1,6 +1,18 @@
 {
   "productos": [
     {
+      "id": "4",
+      "producto": "Black Coffe Cold",
+      "precio": 5,
+      "cantidad": 1
+    },
+    {
+      "id": "5",
+      "producto": "Chocolete Coffe Cold",
+      "precio": 5,
+      "cantidad": 1
+    },
+    {
       "id": "1",
       "producto": "Black Coffe Hot",
       "precio": 5,
@@ -10,12 +22,18 @@
       "id": "2",
       "producto": "Chocolete Coffe Hot",
       "precio": 7,
-      "cantidad": 2
+      "cantidad": 1
     },
     {
       "id": "3",
       "producto": "Coffe with Milk Hot",
       "precio": 9,
+      "cantidad": 1
+    },
+    {
+      "id": "6",
+      "producto": "Coffe with Milk Cold",
+      "precio": 3.75,
       "cantidad": 1
     }
   ]
