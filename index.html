@@ -9,7 +9,7 @@
     <meta content="Free Website Template" name="description">
 
     <link rel="stylesheet" href="css/styleModal.css">
-
+    
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -529,101 +529,92 @@
 
     <!-- login/register Javascript -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            Promise.all([
-                fetch('modalLogin.html').then(r => r.text()),
-                fetch('modalRegister.html').then(r => r.text()),
-                fetch('modalCarrito.html').then(r => r.text()),
-                fetch('modalReserva.html').then(r => r.text())
-            ])
-                .then(([loginHtml, registerHtml, carritoHtml, reservaHtml]) => {
-                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml + reservaHtml;
+document.addEventListener('DOMContentLoaded', () => {
+  Promise.all([
+    fetch('modalLogin.html').then(r => r.text()),
+    fetch('modalRegister.html').then(r => r.text()),
+    fetch('modalCarrito.html').then(r => r.text()),
+    fetch('modalReserva.html').then(r => r.text())
+  ])
+  .then(([loginHtml, registerHtml, carritoHtml, reservaHtml]) => {
+    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml + reservaHtml;
 
-                    const modalLogin = document.getElementById('modalLogin');
-                    const modalRegistro = document.getElementById('modalRegistro');
-                    const modalCarrito = document.getElementById('modalCarrito');
-                    const modalReserva = document.getElementById('modalReserva');
-                    
+    const modalLogin = document.getElementById('modalLogin');
+    const modalRegistro = document.getElementById('modalRegistro');
+    const modalCarrito = document.getElementById('modalCarrito');
+    const modalReserva = document.getElementById('modalReserva');
+    const cerrarCarrito = document.getElementById('cerrarCarrito');
 
-                    // Botón abrir Login individual
-                    document.querySelectorAll('.abrirLogin').forEach(btn => {
-                        btn.addEventListener('click', e => {
-                            e.preventDefault();
-                            modalLogin.style.display = 'block';
-                        });
-                    });
+    // Evitar cierre del modal al click dentro del contenido
+    document.querySelectorAll('.modal-contenido').forEach(modalContenido => {
+      modalContenido.addEventListener('click', e => e.stopPropagation());
+    });
 
-                    // Botón abrir Registro individual
-                    document.querySelectorAll('.abrirRegister').forEach(btn => {
-                        btn.addEventListener('click', e => {
-                            e.preventDefault();
-                            modalRegistro.style.display = 'block';
-                        });
-                    });
+    // Abrir modales
+    document.querySelectorAll('.abrirLogin').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      modalLogin.style.display = 'block';
+    }));
+    document.querySelectorAll('.abrirRegister').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      modalRegistro.style.display = 'block';
+    }));
+    document.querySelectorAll('.abrirCarrito').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      modalCarrito.style.display = 'block';
+    }));
+    document.querySelectorAll('.abrirReserva').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      modalReserva.style.display = 'block';
+    }));
 
-                    // Botón abrir carrito
-                    document.querySelectorAll('.abrirCarrito').forEach(btn => {
-                        btn.addEventListener('click', e => {
-                            e.preventDefault();
-                            modalCarrito.style.display = 'block';
-                        });
-                    });
+    // Cerrar modales
+    document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
+    document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
+    document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
+    document.getElementById('cerrarReserva').onclick = () => modalReserva.style.display = 'none';
 
-                    // Botón abrir reserva
-                    document.querySelectorAll('.abrirReserva').forEach(btn => {
-                        btn.addEventListener('click', e => {
-                            e.preventDefault();
-                            modalReserva.style.display = 'block';
-                        });
-                    });
+    // Navegación login <-> registro
+    document.getElementById('abrirRegistro').onclick = e => {
+      e.preventDefault();
+      modalLogin.style.display = 'none';
+      modalRegistro.style.display = 'block';
+    };
+    document.getElementById('abrirLogin').onclick = e => {
+      e.preventDefault();
+      modalRegistro.style.display = 'none';
+      modalLogin.style.display = 'block';
+    };
 
-                    // Botones cerrar
-                    document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
-                    document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
-                    document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
-                    document.getElementById('cerrarReserva').onclick = () => modalReserva.style.display = 'none';
+    // Formulario reserva
+    document.getElementById('formReserva').onsubmit = e => {
+      e.preventDefault();
+      alert('Reserva realizada con éxito');
+      modalReserva.style.display = 'none';
+      e.target.reset();
+    };
 
-                    // Navegación entre login y registro
-                    document.getElementById('abrirRegistro').onclick = e => {
-                        e.preventDefault();
-                        modalLogin.style.display = 'none';
-                        modalRegistro.style.display = 'block';
-                    };
+    // Cerrar modales haciendo click fuera del contenido
+    window.addEventListener('click', e => {
+      [modalLogin, modalRegistro, modalCarrito, modalReserva].forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
 
-                    document.getElementById('abrirLogin').onclick = e => {
-                        e.preventDefault();
-                        modalRegistro.style.display = 'none';
-                        modalLogin.style.display = 'block';
-                    };
+    // ¡Carga productos tras haber cargado los modales!
+    getJSON();
+  })
+  .catch(err => console.error('Error cargando modales:', err));
+});
 
-                    // Enviar formulario reserva
-                    document.getElementById('formReserva').onsubmit = e => {
-                        e.preventDefault();
-                        const nombre = document.getElementById('nombreReserva').value;
-                        const correo = document.getElementById('correoReserva').value;
-                        const fecha = document.getElementById('fechaReserva').value;
-                        const hora = document.getElementById('horaReserva').value;
-                        const personas = document.getElementById('personasReserva').value;
-
-                        alert(`Reserva realizada:\nNombre: ${nombre}\nCorreo: ${correo}\nFecha: ${fecha}\nHora: ${hora}\nPersonas: ${personas}`);
-
-                        modalReserva.style.display = 'none';
-                        e.target.reset();
-                    };
-
-                    // Cerrar modales al hacer clic fuera
-                    window.onclick = e => {
-                        if (e.target === modalLogin) modalLogin.style.display = 'none';
-                        if (e.target === modalRegistro) modalRegistro.style.display = 'none';
-                        if (e.target === modalCarrito) modalCarrito.style.display = 'none';
-                        if (e.target === modalReserva) modalReserva.style.display = 'none';
-                    };
-                })
-                .catch(err => console.error('Error cargando modales:', err));
-        });
     </script>
 
     <script src="js/productos.js">
     </script>
+
+
 </body>
+
 </html>
