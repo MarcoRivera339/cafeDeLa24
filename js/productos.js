@@ -52,10 +52,11 @@ const actualizarTabla = () => {
         boton.className = 'btn btn-danger btn-sm';
 
         boton.addEventListener('click', (e) => {
-            e.preventDefault();  // Evita redirecciones o envíos
-            e.stopPropagation(); // Previene efectos secundarios
-            eliminar(item.id);   // Llama a la función eliminar
-        });
+    e.preventDefault();
+    e.stopPropagation();
+    eliminar(item.id, e.target); // ✅ Le pasas el botón
+});
+
 
         celdaBoton.appendChild(boton);
         total += item.precio * item.cantidad;
@@ -121,10 +122,38 @@ async function deleteJSON(id) {
     }
 }
 
-const eliminar = (id) => {
-    productos = productos.filter(p => p.id !== id); // Elimina el producto del arreglo
-    actualizarTabla(); // Vuelve a dibujar la tabla
+const eliminar = (id, boton) => {
+    deleteJSON(id).then(() => {
+        productos = productos.filter(p => p.id !== id);
+
+        const fila = boton.closest('tr');
+        if (fila) fila.remove();
+
+        let total = productos.reduce((acc, p) => acc + (parseFloat(p.precio) * parseInt(p.cantidad)), 0);
+        document.getElementById('total').textContent = total.toFixed(2);
+
+        if (productos.length === 0) {
+            document.getElementById("mensajeVacio").style.display = "block";
+        }
+
+        // 🔄 Cargar de nuevo el contenido del modal
+        fetch('modalCarrito.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('modalContainer').innerHTML = html;
+
+                // ✅ Vuelve a abrir el modal con Bootstrap (si estás usando Bootstrap 5)
+                const modal = new bootstrap.Modal(document.getElementById('modalCarrito'));
+                modal.show();
+            });
+    }).catch(error => {
+        console.error("Error al eliminar en el servidor:", error);
+        alert("No se pudo eliminar el producto. Inténtalo de nuevo.");
+    });
 };
+
+
+
 
 // Cargar datos al iniciar
 window.addEventListener('load', () => {
