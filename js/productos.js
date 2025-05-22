@@ -18,6 +18,7 @@ const agregarProducto = (id, producto, precio) => {
     }
 
     actualizarTabla();
+    actualizarContador();
 };
 
 const actualizarTabla = () => {
@@ -88,6 +89,7 @@ async function getJSON() {
         const result = await response.json();
         productos = result;
         actualizarTabla();
+        actualizarContador();
 
         console.log("Success GET:", result);
     } catch (error) {
@@ -125,7 +127,7 @@ async function deleteJSON(id) {
 const eliminar = (id, boton) => {
     deleteJSON(id).then(() => {
         productos = productos.filter(p => p.id !== id);
-
+        actualizarContador();
         const fila = boton.closest('tr');
         if (fila) fila.remove();
 
@@ -152,7 +154,10 @@ const eliminar = (id, boton) => {
     });
 };
 
-
+const actualizarContador = () => {
+    let totalProductos = productos.reduce((acc, p) => acc + parseInt(p.cantidad), 0);
+    document.getElementById('contadorCarrito').textContent = totalProductos;
+};
 
 
 // Cargar datos al iniciar

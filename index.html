@@ -9,7 +9,7 @@
     <meta content="Free Website Template" name="description">
 
     <link rel="stylesheet" href="css/styleModal.css">
-    
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -47,7 +47,7 @@
     <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
             <a href="index.html" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">Café de la 24 Flores</h1>
+                <h1 class="m-0 display-4 text-uppercase text-white">Café de la 24</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -85,15 +85,13 @@
         <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="img/logoCafeteria.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">Sirviendo</h2>
-                        <h1 class="display-1 text-white m-0">Café</h1>
-                        <h2 class="text-white m-0">* Desde 1990 *</h2>
+
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <h2 class="text-primary font-weight-medium m-0">Sirviendo</h2>
                         <h1 class="display-1 text-white m-0">Café</h1>
@@ -255,6 +253,9 @@
             <div class="section-title">
                 <h4 id="menu" class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Precios</h4>
                 <h1 class="display-4">Precios Competitivos</h1>
+                <h1 class="display-8">Total Productos: </h1>
+                <span class="badge badge-light" id="contadorCarrito"
+                    style="font-weight: bold; color: red; font-size: 40px;">0</span>
             </div>
             <div class="row">
                 <div class="col-lg-6">
@@ -312,7 +313,9 @@
                         <div class="col-8 col-sm-9">
                             <h4>Black Coffee</h4>
                             <button id="BlackCoffeCold" class="button-carrito"
-                                onclick="agregarProducto('4','Black Coffe Cold',5)">Añadir al carrito</button>
+                                onclick="agregarProducto('4','Black Coffe Cold',5)">Añadir al carrito
+
+                            </button>
                             <p class="m-0">Café frío, fuerte y directo al paladar. Servido con hielo para mantener su
                                 frescura sin perder su esencia intensa.
                             </p>
@@ -326,7 +329,7 @@
                         <div class="col-8 col-sm-9">
                             <h4>Chocolete Coffee</h4>
                             <button id="chocoleteCoffeCold" class="button-carrito"
-                                onclick="agregarProducto('5','Chocolete Coffe Cold',5)">Añadir al carrito</button>
+                                onclick="agregarProducto('5','Chocolete Coffe Cold',7)">Añadir al carrito</button>
                             <p class="m-0">Una mezcla refrescante de café y chocolate, servida fría para ofrecerte una
                                 experiencia dulce y energizante.
                             </p>
@@ -340,7 +343,7 @@
                         <div class="col-8 col-sm-9">
                             <h4>Coffee With Milk</h4>
                             <button id="coffeWithMilkCold" class="button-carrito"
-                                onclick="agregarProducto('6','Coffe with Milk Cold',3.75)">Añadir al carrito</button>
+                                onclick="agregarProducto('6','Coffe with Milk Cold',9)">Añadir al carrito</button>
                             <p class="m-0">Café frío con leche, suave y cremoso. Una bebida ligera, ideal para acompañar
                                 tus tardes o simplemente para consentirte.
                             </p>
@@ -404,9 +407,9 @@
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                        <img class="img-fluid" src="img/testimonial8.jpg" alt="">
                         <div class="ml-3">
-                            <h4>Esteban R.</h4>
+                            <h4>Milton T.</h4>
                             <i>Arquitecto</i>
                         </div>
                     </div>
@@ -415,10 +418,10 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                        <img class="img-fluid" src="img/testimonial7.jpg" alt="">
                         <div class="ml-3">
-                            <h4>Sandra T.</h4>
-                            <i>Doctora</i>
+                            <h4>Marco R.</h4>
+                            <i>Ingeniero</i>
                         </div>
                     </div>
                     <p class="m-0">"Me gustó el concepto. Pedí un chocolatito caliente y estuvo muy bueno. Volvería para
@@ -426,10 +429,10 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                        <img class="img-fluid" src="img/testimonial6.jpg" alt="">
                         <div class="ml-3">
-                            <h4>Marco L.</h4>
-                            <i>Estudiante</i>
+                            <h4>Carlos J.</h4>
+                            <i>Abogado</i>
                         </div>
                     </div>
                     <p class="m-0">"Es un sitio distinto a los cafés tradicionales. Todo está decorado con objetos
@@ -437,10 +440,10 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src="img/testimonial-4.jpg" alt="">
+                        <img class="img-fluid" src="img/testimonial5.jpg" alt="">
                         <div class="ml-3">
-                            <h4>Carla J.</h4>
-                            <i>Ingeniera</i>
+                            <h4>Diego C.</h4>
+                            <i>Ingeniero</i>
                         </div>
                     </div>
                     <p class="m-0">"El lugar es tranquilo y con buena música. El café filtrado me gustó bastante. Ideal
@@ -458,21 +461,23 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 id="contactanos" class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contáctanos
                 </h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Av. 5 de Junio S2-04 y Fco. Quijano, Pillaro</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+593 99 427 1141</p>
-                <p class="m-0"><i class="fa fa-envelope mr-2"></i>infocafe24@gmail.com</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Calle fundadores del cantón y atipillahuaso- Pillaro</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+593 99 877 9446</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>vivivale01@hotmail.com</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Síguenos</h4>
                 <p>Encuentranos en todas nuestras redes sociales</p>
                 <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                        href="https://www.facebook.com/CafeyFloresPillaro" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square"
+                        href="https://www.instagram.com/laesquinadela24/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -489,7 +494,7 @@
                 <p>Para más información escríbenos al WhatsApp:</p>
                 <!-- QR de WhatsApp -->
                 <a href="https://wa.me/593998779446" target="_blank">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/593994271141"
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/593998779446"
                         alt="QR WhatsApp" style="width: 125px; height: 125px;">
                 </a>
             </div>
@@ -529,85 +534,85 @@
 
     <!-- login/register Javascript -->
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  Promise.all([
-    fetch('modalLogin.html').then(r => r.text()),
-    fetch('modalRegister.html').then(r => r.text()),
-    fetch('modalCarrito.html').then(r => r.text()),
-    fetch('modalReserva.html').then(r => r.text())
-  ])
-  .then(([loginHtml, registerHtml, carritoHtml, reservaHtml]) => {
-    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml + reservaHtml;
+        document.addEventListener('DOMContentLoaded', () => {
+            Promise.all([
+                fetch('modalLogin.html').then(r => r.text()),
+                fetch('modalRegister.html').then(r => r.text()),
+                fetch('modalCarrito.html').then(r => r.text()),
+                fetch('modalReserva.html').then(r => r.text())
+            ])
+                .then(([loginHtml, registerHtml, carritoHtml, reservaHtml]) => {
+                    document.getElementById('contenedor-modal').innerHTML = loginHtml + registerHtml + carritoHtml + reservaHtml;
 
-    const modalLogin = document.getElementById('modalLogin');
-    const modalRegistro = document.getElementById('modalRegistro');
-    const modalCarrito = document.getElementById('modalCarrito');
-    const modalReserva = document.getElementById('modalReserva');
-    const cerrarCarrito = document.getElementById('cerrarCarrito');
+                    const modalLogin = document.getElementById('modalLogin');
+                    const modalRegistro = document.getElementById('modalRegistro');
+                    const modalCarrito = document.getElementById('modalCarrito');
+                    const modalReserva = document.getElementById('modalReserva');
+                    const cerrarCarrito = document.getElementById('cerrarCarrito');
 
-    // Evitar cierre del modal al click dentro del contenido
-    document.querySelectorAll('.modal-contenido').forEach(modalContenido => {
-      modalContenido.addEventListener('click', e => e.stopPropagation());
-    });
+                    // Evitar cierre del modal al click dentro del contenido
+                    document.querySelectorAll('.modal-contenido').forEach(modalContenido => {
+                        modalContenido.addEventListener('click', e => e.stopPropagation());
+                    });
 
-    // Abrir modales
-    document.querySelectorAll('.abrirLogin').forEach(btn => btn.addEventListener('click', e => {
-      e.preventDefault();
-      modalLogin.style.display = 'block';
-    }));
-    document.querySelectorAll('.abrirRegister').forEach(btn => btn.addEventListener('click', e => {
-      e.preventDefault();
-      modalRegistro.style.display = 'block';
-    }));
-    document.querySelectorAll('.abrirCarrito').forEach(btn => btn.addEventListener('click', e => {
-      e.preventDefault();
-      modalCarrito.style.display = 'block';
-    }));
-    document.querySelectorAll('.abrirReserva').forEach(btn => btn.addEventListener('click', e => {
-      e.preventDefault();
-      modalReserva.style.display = 'block';
-    }));
+                    // Abrir modales
+                    document.querySelectorAll('.abrirLogin').forEach(btn => btn.addEventListener('click', e => {
+                        e.preventDefault();
+                        modalLogin.style.display = 'block';
+                    }));
+                    document.querySelectorAll('.abrirRegister').forEach(btn => btn.addEventListener('click', e => {
+                        e.preventDefault();
+                        modalRegistro.style.display = 'block';
+                    }));
+                    document.querySelectorAll('.abrirCarrito').forEach(btn => btn.addEventListener('click', e => {
+                        e.preventDefault();
+                        modalCarrito.style.display = 'block';
+                    }));
+                    document.querySelectorAll('.abrirReserva').forEach(btn => btn.addEventListener('click', e => {
+                        e.preventDefault();
+                        modalReserva.style.display = 'block';
+                    }));
 
-    // Cerrar modales
-    document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
-    document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
-    document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
-    document.getElementById('cerrarReserva').onclick = () => modalReserva.style.display = 'none';
+                    // Cerrar modales
+                    document.getElementById('cerrarLogin').onclick = () => modalLogin.style.display = 'none';
+                    document.getElementById('cerrarRegistro').onclick = () => modalRegistro.style.display = 'none';
+                    document.getElementById('cerrarCarrito').onclick = () => modalCarrito.style.display = 'none';
+                    document.getElementById('cerrarReserva').onclick = () => modalReserva.style.display = 'none';
 
-    // Navegación login <-> registro
-    document.getElementById('abrirRegistro').onclick = e => {
-      e.preventDefault();
-      modalLogin.style.display = 'none';
-      modalRegistro.style.display = 'block';
-    };
-    document.getElementById('abrirLogin').onclick = e => {
-      e.preventDefault();
-      modalRegistro.style.display = 'none';
-      modalLogin.style.display = 'block';
-    };
+                    // Navegación login <-> registro
+                    document.getElementById('abrirRegistro').onclick = e => {
+                        e.preventDefault();
+                        modalLogin.style.display = 'none';
+                        modalRegistro.style.display = 'block';
+                    };
+                    document.getElementById('abrirLogin').onclick = e => {
+                        e.preventDefault();
+                        modalRegistro.style.display = 'none';
+                        modalLogin.style.display = 'block';
+                    };
 
-    // Formulario reserva
-    document.getElementById('formReserva').onsubmit = e => {
-      e.preventDefault();
-      alert('Reserva realizada con éxito');
-      modalReserva.style.display = 'none';
-      e.target.reset();
-    };
+                    // Formulario reserva
+                    document.getElementById('formReserva').onsubmit = e => {
+                        e.preventDefault();
+                        alert('Reserva realizada con éxito');
+                        modalReserva.style.display = 'none';
+                        e.target.reset();
+                    };
 
-    // Cerrar modales haciendo click fuera del contenido
-    window.addEventListener('click', e => {
-      [modalLogin, modalRegistro, modalCarrito, modalReserva].forEach(modal => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
+                    // Cerrar modales haciendo click fuera del contenido
+                    window.addEventListener('click', e => {
+                        [modalLogin, modalRegistro, modalCarrito, modalReserva].forEach(modal => {
+                            if (e.target === modal) {
+                                modal.style.display = 'none';
+                            }
+                        });
+                    });
 
-    // ¡Carga productos tras haber cargado los modales!
-    getJSON();
-  })
-  .catch(err => console.error('Error cargando modales:', err));
-});
+                    // ¡Carga productos tras haber cargado los modales!
+                    getJSON();
+                })
+                .catch(err => console.error('Error cargando modales:', err));
+        });
 
     </script>
 
